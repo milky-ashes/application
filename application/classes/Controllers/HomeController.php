@@ -25,6 +25,27 @@ class HomeController extends Controller
     }
 
     /**
+     * Method available by /home/index or /home or /
+     *
+     * @return mixed
+     */
+    public function keeper()
+    {
+        return $this->views->render('overviews');
+    }
+
+    /**
+     * Method available by /home/index or /home or /
+     *
+     * @return mixed
+     */
+    public function keeper2()
+    {
+        return $this->views->render('discount');
+    }
+
+
+    /**
      * Method available by /home/json or /short-url
      *
      * @return array

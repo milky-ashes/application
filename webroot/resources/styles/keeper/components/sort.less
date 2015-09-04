@@ -1,0 +1,131 @@
+.sort-part {
+  border-top: 1px solid @color-border-light;
+  padding-top: 15px;
+  padding-bottom: 20px;
+
+  .filter-part {
+    .clearfix();
+
+    float: left;
+
+    .filter-block {
+      float: left;
+      margin-right: 20px;
+      position: relative;
+
+
+      &.open-sort {
+        z-index: 50;
+
+      }
+
+      .sort-list {
+        width: 0;
+        overflow: hidden;
+
+        position: absolute;
+        left: -20px;
+        top: -15px;
+        background: @color-white;
+        box-shadow: 0 2px 10px rgba(0,0,0,.1);
+        z-index: 20;
+        border-radius: 2px;
+        padding-top: 43px;
+
+        span {
+          .font-size(16);
+
+          display: block;
+          border-top: 1px solid @color-white;
+          border-bottom: 1px solid @color-white;
+          padding: 12px 20px;
+          positioN: relative;
+
+          &:before {
+            .size(0, 100%);
+
+            position: absolute;
+            transition: all .2s ease-out 0s;
+            left: 0;
+            top: 0;
+            background: @brand-color;
+            opacity: .1;
+            content: "";
+          }
+
+          &:hover {
+
+            border-color: @color-border-light;
+            cursor: pointer;
+
+            &:before {
+              transition: all .2s ease-out 0s;
+
+              width: 100%;
+            }
+          }
+        }
+      }
+
+      a {
+        .font-size(16);
+
+        color: @color-text-dark;
+        padding-right: 20px;
+        position: relative;
+        display: block;
+        z-index: 25;
+
+        &:after {
+          font-family: 'spiral-icon';
+          font-size: 3px;
+          line-height: 3px;
+          positioN: absolute;
+          right: 0;
+          top: 8px;
+          display: block;
+          content: '\e800';
+          -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+}
+
+.search-part {
+  float: right;
+  position: relative;
+
+  .search-link {
+    color: @color-text-dark;
+    font-size: 18px;
+    text-decoration: none;
+
+    display: none; //hide
+  }
+
+  .search-form {
+    position: absolute;
+    width: 240px;
+    top: -15px;
+    right: 0;
+
+    &:after {
+      font-family: 'spiral-icon';
+      content: '\e804';
+      position: absolute;
+      font-size: 18px;
+      color: @color-text-dark;
+      top: 12px;
+      left: 12px;
+      z-index: 5;
+
+    }
+
+    .item-input {
+      padding-left: 40px;
+    }
+
+  }
+}

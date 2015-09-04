@@ -10,16 +10,20 @@
  */
 return [
     'cache'        => [
-        'enabled'   => true,
+        'enabled'   => false,
         'directory' => directory("cache") . '/views'
     ],
     'namespaces'   => [
-        'default' => [
-            directory("application") . '/views',
+        'default'  => [
+            directory("application") . '/views'
         ],
-        'spiral'  => [
+        'spiral'   => [
             directory("application") . '/views/spiral',
-            directory("libraries") . '/spiral/framework/source/views'
+            directory("libraries") . '/spiral/framework/source/views',
+            directory("libraries") . '/spiral/toolkit/source/views'
+        ],
+        'profiler' => [
+            directory("libraries") . '/spiral/profiler/source/views'
         ]
     ],
     'dependencies' => [
@@ -47,7 +51,8 @@ return [
             'Spiral\Views\Processors\TranslateProcessor'   => [],
             'Spiral\Views\Processors\TemplateProcessor'    => [],
             'Spiral\Views\Processors\EvaluateProcessor'    => [],
-            'Spiral\Views\Processors\PrettifyProcessor'    => []
+            'Spiral\Views\Processors\PrettifyProcessor'    => [],
+            'Spiral\Toolkit\ResourceManager'                => []
         ]
     ],
     'classes'      => []
