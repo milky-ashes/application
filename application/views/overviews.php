@@ -33,19 +33,19 @@
                     <div class="content-block">
                         <dl>
                             <dt>[[ID]]</dt>
-                            <dd>38848</dd>
+                            <dd>...</dd>
                             <dt>[[Date Registred]]</dt>
-                            <dd>Jul 24, 2015</dd>
+                            <dd>...</dd>
                             <dt>[[Last Visit]]</dt>
-                            <dd>Jul 24, 2015</dd>
+                            <dd>...</dd>
                             <dt>[[InsideSales ID]]</dt>
-                            <dd>no leads created</dd>
+                            <dd>...</dd>
                             <dt>[[Status]]</dt>
                             <dd>Active</dd>
                             <dt>[[Services]]</dt>
-                            <dd>interaction-builder, cutout-people, lectora-elearning, some more text</dd>
+                            <dd>...</dd>
                             <dt>[[Downloads]]</dt>
-                            <dd>Downloads</dd>
+                            <dd>...</dd>
                         </dl>
                     </div>
                     <div class="content-block ">

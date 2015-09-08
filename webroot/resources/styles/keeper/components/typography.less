@@ -77,3 +77,20 @@ dl {
 .note {
   .font-size(13);
 }
+
+a {
+  color: @brand-color;
+
+  &:hover {
+    color: @brand-active-element;
+  }
+}
+
+button:focus,
+input:focus,
+a:focus,
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus {
+  outline: none;
+}

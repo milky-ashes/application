@@ -6579,6 +6579,17 @@ body {
   height: 160px;
   transition: all 0.2s ease-out 0s;
 }
+@media screen and (max-width: 1023px) {
+  .header .logo-block {
+    width: 100px;
+  }
+  .header .logo-block a img {
+    max-width: 100%;
+  }
+  .header .top-panel {
+    margin-left: 105px;
+  }
+}
 .navigation {
   width: 300px;
   height: 100%;
@@ -6592,6 +6603,7 @@ body {
   background: transparent;
   border: 0;
   border-radius: 0;
+  box-shadow: none;
 }
 .navigation .panel .panel-heading {
   padding: 0;
@@ -6652,8 +6664,23 @@ body {
   margin-top: -1px;
   text-decoration: none;
 }
+.navigation .panel .panel-heading a:before {
+  width: 0px;
+  height: 1px;
+  transition: all 0.2s ease-out 0s;
+  background: #4e4e4e;
+  content: "";
+  display: block;
+  position: absolute;
+  right: 210px;
+  bottom: -1px;
+}
 .navigation .panel .panel-heading a:hover {
   color: #ffffff;
+}
+.navigation .panel .panel-heading a:hover:before {
+  transition: all 0.2s ease-out 0s;
+  width: 90px;
 }
 .navigation .panel .panel-heading a.collapsed {
   transition: all 0.2s ease-out 0s;
@@ -6699,6 +6726,7 @@ main.wide-content .container {
 main .container {
   max-width: 1024px;
   margin: 0;
+  min-width: 702px;
 }
 main .head-part {
   padding-bottom: 10px;
@@ -6851,6 +6879,20 @@ dl dd:before {
   font-size: 13px;
   font-size: 0.8125rem;
 }
+a {
+  color: #428bca;
+}
+a:hover {
+  color: #428bca;
+}
+button:focus,
+input:focus,
+a:focus,
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus {
+  outline: none;
+}
 .nav-tabs {
   background: #e0e0e0;
   border-radius: 2px 2px 0 0;
@@ -6894,10 +6936,15 @@ dl dd:before {
   font-size: 0.8125rem;
   border: 0;
   border-radius: 0;
+  transition: all 0.2s ease-out 0s;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   color: #3a3a3a;
   padding-left: 20px;
   height: 40px;
+}
+.form-content .item-form .item-input:focus {
+  transition: all 0.2s ease-out 0s;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 .form-content .item-form .item-label {
   font-weight: bold;
@@ -6942,6 +6989,7 @@ dl dd:before {
   height: 40px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   border-radius: 0;
+  text-indent: 10px;
 }
 .check-list .item-form {
   margin-bottom: 5px;
@@ -7066,7 +7114,11 @@ dl dd:before {
 .sort-part .filter-part .filter-block.open-sort {
   z-index: 50;
 }
-.sort-part .filter-part .filter-block .sort-list {
+.sort-part .filter-part .filter-block.open-sort > a {
+  pointer-events: none;
+}
+.sort-part .filter-part .filter-block .sort-list,
+.sort-part .filter-part .filter-block .filter-list {
   width: 0;
   overflow: hidden;
   position: absolute;
@@ -7078,7 +7130,8 @@ dl dd:before {
   border-radius: 2px;
   padding-top: 43px;
 }
-.sort-part .filter-part .filter-block .sort-list span {
+.sort-part .filter-part .filter-block .sort-list > span,
+.sort-part .filter-part .filter-block .filter-list > span {
   font-size: 16px;
   font-size: 1rem;
   display: block;
@@ -7087,7 +7140,8 @@ dl dd:before {
   padding: 12px 20px;
   positioN: relative;
 }
-.sort-part .filter-part .filter-block .sort-list span:before {
+.sort-part .filter-part .filter-block .sort-list > span:before,
+.sort-part .filter-part .filter-block .filter-list > span:before {
   width: 0;
   height: 100%;
   position: absolute;
@@ -7098,13 +7152,57 @@ dl dd:before {
   opacity: .1;
   content: "";
 }
-.sort-part .filter-part .filter-block .sort-list span:hover {
+.sort-part .filter-part .filter-block .sort-list > span:hover,
+.sort-part .filter-part .filter-block .filter-list > span:hover {
   border-color: #e0e0e0;
   cursor: pointer;
 }
-.sort-part .filter-part .filter-block .sort-list span:hover:before {
+.sort-part .filter-part .filter-block .sort-list > span:hover:before,
+.sort-part .filter-part .filter-block .filter-list > span:hover:before {
   transition: all 0.2s ease-out 0s;
   width: 100%;
+}
+.sort-part .filter-part .filter-block .sort-list > span .item-form-checkbox,
+.sort-part .filter-part .filter-block .filter-list > span .item-form-checkbox {
+  padding-right: 40px;
+  margin-bottom: 0;
+  padding-left: 0;
+}
+.sort-part .filter-part .filter-block .sort-list > span .item-form-checkbox:before,
+.sort-part .filter-part .filter-block .filter-list > span .item-form-checkbox:before {
+  font-size: 10px;
+  font-size: 0.625rem;
+  color: #428bca;
+  border: none;
+  font-family: 'spiral-icon';
+  content: "\e805";
+  top: 5px;
+  left: 224px;
+}
+.sort-part .filter-part .filter-block .sort-list > span .item-form-checkbox span:before,
+.sort-part .filter-part .filter-block .filter-list > span .item-form-checkbox span:before {
+  font-size: 10px;
+  font-size: 0.625rem;
+  color: #428bca;
+  font-family: 'spiral-icon';
+  content: "\e806";
+  background: transparent;
+  top: 5px;
+  left: 224px;
+}
+.sort-part .filter-part .filter-block .sort-list > span .item-form-checkbox [type=checkbox]:checked + span,
+.sort-part .filter-part .filter-block .filter-list > span .item-form-checkbox [type=checkbox]:checked + span {
+  color: #428bca;
+}
+.sort-part .filter-part .filter-block .sort-list > span .item-form-checkbox .item-label,
+.sort-part .filter-part .filter-block .filter-list > span .item-form-checkbox .item-label {
+  font-size: 16px;
+  font-size: 1rem;
+  font-weight: normal;
+}
+.sort-part .filter-part .filter-block .sort-list > span .item-form-checkbox .item-label input:checked + span,
+.sort-part .filter-part .filter-block .filter-list > span .item-form-checkbox .item-label input:checked + span {
+  color: #428bca;
 }
 .sort-part .filter-part .filter-block a {
   font-size: 16px;
@@ -7114,6 +7212,7 @@ dl dd:before {
   position: relative;
   display: block;
   z-index: 25;
+  text-decoration: none;
 }
 .sort-part .filter-part .filter-block a:after {
   font-family: 'spiral-icon';

@@ -176,6 +176,20 @@ body {
       }
     }
   }
+
+  @media @small {
+    .logo-block {
+      width: 100px;
+
+      a img {
+        max-width: 100%;
+      }
+    }
+
+    .top-panel {
+      margin-left: 105px;
+    }
+  }
 }
 
 .navigation {
@@ -191,6 +205,7 @@ body {
     background: transparent;
     border: 0;
     border-radius: 0;
+    box-shadow: none;
 
     .panel-heading {
       padding: 0;
@@ -255,8 +270,26 @@ body {
         margin-top: -1px;
         text-decoration: none;
 
+        &:before {
+          .size(0px,1px);
+
+          transition: all .2s ease-out 0s;
+          background: @color-border-grey;
+          content: "";
+          display: block;
+          position: absolute;
+          right: 210px;
+          bottom: -1px;
+
+        }
+
         &:hover {
           color: @color-white;
+
+          &:before {
+            transition: all .2s ease-out 0s;
+            width: 90px;
+          }
         }
 
         &.collapsed {
@@ -317,6 +350,7 @@ main {
   .container {
     max-width: 1024px;
     margin: 0;
+    min-width: 702px;
   }
 
   .head-part {

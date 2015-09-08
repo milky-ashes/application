@@ -24,12 +24,12 @@
                             <span>Stars</span>
                         </div>
                     </div>
-                    <div class="filter-block js-sort-block">
-                        <a href="#" class="js-sort-link">Filter by <span></span></a>
-                        <div class="sort-list">
-                            <span>People</span>
-                            <span>Date</span>
-                            <span>Stars</span>
+                    <div class="filter-block js-filter-block">
+                        <a href="#" class="js-filter-link">Filter by <span></span></a>
+                        <div class="filter-list">
+                            <span><form:checkbox checked label="People"/></span>
+                            <span><form:checkbox label="Date"/></span>
+                            <span><form:checkbox label="Stars"/></span>
                         </div>
                     </div>
                 </div>
